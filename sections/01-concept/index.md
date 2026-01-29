@@ -26,7 +26,19 @@ Snetimazon is an AI based decsion making framework for data processing and senti
         The result have visualized in order to display the sentiment distributions regarding to the each extracted aspects and provide a summary of the analysis
 - User interactions and Applications
     - Users and roles: The Sentimazon is designed to be use for single user. This means adimistrative or gust roles are not required in order to implement the project. The program can be excecuted by all users from either academia or industry. 
-    - applications:The project can be modified to apply on various textual datasets. This interactions can be based on occasional or reporting and academic coursework. The important part of the project comply the policies related to privacy and regulations of business and companies to avoid any misuse of the project.
+    - applications: The project can be modified to apply on various textual datasets. This interactions can be based on occasional or reporting and academic coursework. The important part of the project comply the policies related to privacy and regulations of business and companies to avoid any misuse of the project.
+
+- Technical Implementation
+    - Used language: Python
+    - Libraries: NLTK, regex, Pandas, and Matplotlip
+    - Sentiment analysis: NLTK-Vader
+    - excecution envionrnment: Jupyter notebook and Python Command-line interface
+    - Data source: Amazon publicly available reviews
+
+
+
+
+
 
 
 
