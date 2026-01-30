@@ -14,6 +14,7 @@ Experts who have technical skills who do the data analysis on the customers onli
 -	As a data analyst, I want to apply the pre-processing steps in order to mitigate noises and errors, so I can have efficient model and accurate result.
 -	As a data analyst, I want to do sentiment analysis on the cleaned textural data, so I can determine the positive, negative, and neutral aspects per review.
 -	As a data analyst, I want to illustrate the final results and sentiment distributions, so I can present the output of project to technical and non-technical groups.
+
 **Persona 2**: Business Decision Maker
 Although both technical and non-technical stakeholders have interests to understand the customers reviews, the non-technical stakeholders are more interested on understanding customers expectations and views rather than coding part.
 -	As a non-technical stakeholder, I want to have a vivid picture on aspects and sentiment related to each aspect of product, so I can understand the overall customer perception and satisfaction regarding to the product.
