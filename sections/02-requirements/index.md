@@ -36,6 +36,7 @@ Acceptance criteria:
 -   the program is able to present various part of data including rating, row number, account name, and reviews
 -   the textural data are saved on a accated file format (CSV) for next analysis.
 \
+
 ***2.1.2.Pre-Processing***
 \
 Requrinemnts:
@@ -45,7 +46,7 @@ Acceptance criteria:
 -   the program remove unnecceary charcters for the further analysis 
 -   textual data is cleaned up and normalized
 -   the each pre-processing step is stored in separate review column
-
+\
 ***2.1.3.Sentiment Analysis***
 \
 Requrinemnts:
@@ -53,7 +54,7 @@ The program must be able to analyse the reviews and determine reviews sentiments
 \
 Acceptance criteria:
 -   the sentiment anlayiss grouped each review intro thee category including positive, negative, and nutral sentiments
- 
+\
 ***2.1.4.Visualization***
 \
 Requrinemnts:
@@ -64,6 +65,7 @@ Acceptance criteria:
 -   The program displays the frquencey of each aspects and sentiments related to each review.
 \
 **2.2.Non-Functional requrinments**
+\
 ***2.2.1.Usablity***
 \
 Requrinemnts:
@@ -72,6 +74,7 @@ The program should be easy to use by users with basic knowledge on data analysis
 Acceptance criteria:
 -   Results and analysis presentation are labeled and understandable
 -   Files and results are clearly orgonize
+\
 ***2.2.2.Performance***
 \
 Requrinemnts:
@@ -79,7 +82,8 @@ The program must be able to process the data effictivly with high accuracy.
 \
 Acceptance criteria:
 -   the program do the sentiment analysis within acceptable time period.
--   The program visualization and loading do not case significant delays on the process
+-   The program visualization and loading do not case significant delays on the process.
+\
 ***2.2.3.Reliablity***
 \
 Requrinemnts:
@@ -88,6 +92,7 @@ The program must be able to provide the consistent outputs.
 Acceptance criteria:
 -   the program produce the same results and visulizations after re-running the program
 -   Noises and errors are fixed during the analysis withoit leading to data corruption.
+\
 ***2.2.4.Maintainablity***
 \
 Requrinemnts:
@@ -97,7 +102,8 @@ Acceptance criteria:
 -   the program is structured in a way to be easy to mody and improve.
 -   The program is modular and each part can be imrpve sepertally.
 
-**2.3.Implemntation Requrinments**
+**2.3.Implemntation Requrinments**  
+\
 ***2.3.1.Programing Language***
 \
 Requrinemnts:
@@ -108,6 +114,7 @@ Python csonsit of many useful librararies for various part of natural language p
 \
 Acceptance criteria:
 -   The whole program is written using Python
+\
 ***2.3.2.Data analysis and visualization***
 \
 Requrinemnts:
@@ -119,7 +126,7 @@ Impemnation of proper libraries leads to improve relaibality and efficiency of t
 Acceptance criteria:
 -   Loading and data manupilation is handle using the Pandas library
 -   Visualization of the analysis is produced via python visualization related libraries.
-
+\
 3.	Glossary
 -   Sentiment analysis: Sentiment analysis, also known as opinion mining, is a subfield of natural language processing (NLP) that identifies and extracts subjective information from textual data. The main goal of sentiment analysis is to determine the emotional tone behind a set of words, which helps in understanding the attitudes, opinions, and feelings expressed in the text.
 -   Pre-processing: The process of converting raw data into a format that is readable and understandable by machines. To perform any related activity, the texts are first cleaned and pre-processed.
