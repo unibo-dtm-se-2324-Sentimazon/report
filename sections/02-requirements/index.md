@@ -22,18 +22,80 @@ Although both technical and non-technical stakeholders have interests to underst
 
 
 ## Requirements analysis
+The list of requrinemnts are explained the what the project should proceed. In this regard, functional, non-functional, and implemantion constrains as requirnments are separated and grouped. In addition, requrienmts have specific acceptance criteria as validation of the requrinment.
+2.1.    Functional requrinments
 
-- The requirements must explain **what** (not how) the software being produced should do.
-    - You should not focus on the particular problems, but exclusively on what you want the application to do.
-- Requirements must be clearly identified, and possibly numbered.
-- Requirements are divided into:
-    - **Functional**: some functionality the software should provide to the user.
-    - **Non-functional**: requirements that do not directly concern behavioral aspects, such as consistency, availability, security, efficiency, etc.
-    - **Implementation**: constrain the entire phase of system realization, for instance by requiring the use of a specific programming language and/or a specific software dependency.
-        - These constraints should be adequately justified by political / economic / administrative reasons (which must be written down)...
-        - ...otherwise, implementation choices should emerge *as a consequence of* design (and therefore described in the design section).
-- If there are domain-specific terms, these should be explained in a **glossary**.
-- Each requirement must have its own **acceptance criteria**.
-    - These will be important for the validation phase. 
+2.1.1.	Overview the textual data
+Requrinemnts:
+The program must be able to capture and raed the reviews related to the products (ideally Amazon website)
+Acceptance criteria:
+•	the program is able to present various part of data including rating, row number, account name, and reviews
+•	the textural data are saved on a accated file format (CSV) for next analysis.
+2.1.2.	Pre-Processing
+Requrinemnts:
+The program must be able to do pre-processing steps in order to mitigate further errors and noises in sentiment analysis
+Acceptance criteria:
+•	the program remove unnecceary charcters for the further analysis 
+•	textual data is cleaned up and normalized
+•	the each pre-processing step is stored in separate review column
 
-> You may consider adding a use-case diagram here (via PlantUML) to better visualize the requirements and their relationships
+2.1.3.	Sentiment Analysis
+Requrinemnts:
+The program must be able to analyse the reviews and determine reviews sentiments respect to each aspect.
+Acceptance criteria:
+•	the sentiment anlayiss grouped each review intro thee category including positive, negative, and nutral sentiments
+ 
+2.1.4.	Visualization
+Requrinemnts:
+The program must be able to visualize  reviews and sentiment distribution
+Acceptance criteria:
+•	the program make bar-charts to visualize the sentimens related to each aspects.
+•	The program displays the frquencey of each aspects and sentiments related to each review.
+
+2.2.	Non-Functional requrinments
+2.2.1.	Usablity
+Requrinemnts:
+The program should be easy to use by users with basic knowledge on data analysis.
+Acceptance criteria:
+•	Results and analysis presentation are labeled and understandable
+•	Files and results are clearly orgonize
+2.2.2.	Performance
+Requrinemnts:
+The program must be able to process the data effictivly with high accuracy.
+Acceptance criteria:
+•	the program do the sentiment analysis within acceptable time period.
+•	The program visualization and loading do not case significant delays on the process
+2.2.3.	Reliablity
+Requrinemnts:
+The program must be able to provide the consistent outputs
+Acceptance criteria:
+•	the program produce the same results and visulizations after re-running the program
+•	Noises and errors are fixed during the analysis withoit leading to data corruption.
+2.2.4.	Maintainablity
+Requrinemnts:
+The program should be possible to modify with advanced models.
+Acceptance criteria:
+•	the program is structured in a way to be easy to mody and improve.
+•	The program is modular and each part can be imrpve sepertally.
+
+2.3.	Implemntation Requrinments
+2.3.1.	Programing Language
+Requrinemnts:
+The system should be programed using Python.
+Justification:
+Python csonsit of many useful librararies for various part of natural language processing, making it as most poupolar programming language for sentiment analysis.
+Acceptance criteria:
+•	The whole program is written using Python
+2.3.2.	Data analysis and visualization
+Requrinemnts:
+The program should implement required visualization libraries to present results
+Justification:
+Impemnation of proper libraries leads to improve relaibality and efficiency of the analysis.
+Acceptance criteria:
+•	Loading and data manupilation is handle using the Pandas library
+•	Visualization of the analysis is produced via python visualization related libraries.
+
+3.	Glossary
+•	Sentiment analysis: Sentiment analysis, also known as opinion mining, is a subfield of natural language processing (NLP) that identifies and extracts subjective information from textual data. The main goal of sentiment analysis is to determine the emotional tone behind a set of words, which helps in understanding the attitudes, opinions, and feelings expressed in the text.
+•	Pre-processing: The process of converting raw data into a format that is readable and understandable by machines. To perform any related activity, the texts are first cleaned and pre-processed.
+•	Visualization: Data visualization is the process of translating information into a visual format, such as a map or graph, in order to make it easier for the human brain to understand the data and extract insights from it. The main goal of data visualization is to make it easier to identify patterns, trends, and outliers in large data sets.
