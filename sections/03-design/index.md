@@ -12,22 +12,19 @@ This section is presented the strategies applied to demonstrated requirements id
 
 The project, as a pipline-oriented analystics application, is implemented in python programing langage. The sentiamzon process the unstructured data by procceding steps in order to extract knowledge from the data. The arctecture of the Sentimazon consit of multipme components. The first step, data acuaistion, is responsible to read the stored data in CSV file including reviews from external resourceses such as Kaggle. The pre-processing step is perfromed in the next step in order to proucede the normalization of the textual data and remove noises from the further analysis. Following the preprocessing, the aspect based sentiment analysis is applied to extract the sentiment related to each aspect of sentiment. The sentiments are classified into three categories inclusing positive, negative, and neutral. At the final step, the visualization components is generated the graphical charts in otder to present the sentiments distributions and aspect frequency. The architecture is perfocmed and structured using python programming language, which is presenteded as follow.
 
-![Activity diagram](./imgs/Architecture.jpg)
-
-
-## Infrastructure (mostly applies to distributed systems)
-
-- Are there **infrastructural components** that need to be introduced? Which and **how many** of each?
-    - e.g. **clients**, **servers**, **load balancers**, **caches**, **databases**, **message brokers**, **queues**, **workers**, **proxies**, **firewalls**, **CDNs**, etc.
-- How do components **distribute** over the network? **Where** are they located?
-    - e.g. do servers / brokers / databases / etc. sit on the same machine? on the same network? on the same datacenter? on the same continent?
-- How do components **find** each other?
-    - How to **name** components?
-    - e.g. **DNS**, **service discovery**, **load balancing**, etc.
-
-> UML deployment diagrams are welcome here
+![Activity diagram](./imgs/Architecture.png)
 
 ## Modelling
+The modelling section is designed based on the some core domain entities of Sentimazon including:
+•	Review
+•	Aspects of products
+•	Sentiment
+•	Dataset
+•	Analyst
+•	Results visualization
+The Class Model is designed using the entities and their relationships. The model is presented, as follow.
+![Architecture](./imgs/Architecture.jpg)
+
 
 ### Domain driven design (DDD) modelling
 
