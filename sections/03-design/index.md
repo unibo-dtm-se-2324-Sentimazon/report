@@ -23,7 +23,7 @@ The modelling section is designed based on the some core domain entities of Sent
 •	Analyst
 •	Results visualization
 The Class Model is designed using the entities and their relationships. The model is presented, as follow.
-![Architecture](./imgs/Architecture.jpg)
+![Class Mode](./imgs/1.png)
 
 
 ### Domain driven design (DDD) modelling
