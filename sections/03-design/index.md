@@ -23,8 +23,30 @@ The modelling section is designed based on the some core domain entities of Sent
 •	Analyst
 •	Results visualization
 The Class Model is designed using the entities and their relationships. The model is presented, as follow.
+
 ![Class Mode](./imgs/1.png)
 
+This diagram focuses on:
+•	Key aspects and associations
+•	Core responsibilities
+•	The system and structure related to it
+
+## Interaction
+
+- How do components *communicate*? *When*? *What*?
+
+- Which **interaction patterns** do they enact?
+
+> UML sequence diagrams are welcome here
+
+## Behaviour
+
+- How does **each** component *behave* individually (e.g., in *response* to *events* or messages)?
+    + Some components may be *stateful*, others *stateless*
+
+- Which components are in charge of updating the **state** of the system? *When*? *How*?
+
+> UML state diagrams or activity diagrams are welcome here
 
 ### Domain driven design (DDD) modelling
 
@@ -56,22 +78,7 @@ The Class Model is designed using the entities and their relationships. The mode
 - Are there domain concepts or data types which represent messages being exchanged between components?
     + e.g. messages between clients and servers, messages between servers, messages between clients
 
-## Interaction
 
-- How do components *communicate*? *When*? *What*?
-
-- Which **interaction patterns** do they enact?
-
-> UML sequence diagrams are welcome here
-
-## Behaviour
-
-- How does **each** component *behave* individually (e.g., in *response* to *events* or messages)?
-    + Some components may be *stateful*, others *stateless*
-
-- Which components are in charge of updating the **state** of the system? *When*? *How*?
-
-> UML state diagrams or activity diagrams are welcome here
 
 ## Data-related aspects (in case persistent storage is needed)
 
