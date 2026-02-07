@@ -24,7 +24,7 @@ The modelling section is designed based on the some core domain entities of Sent
 •	Results visualization
 The Class Model is designed using the entities and their relationships. The model is presented, as follow.
 
-![Class Mode](./imgs/1.png)
+![Class Model](./imgs/1.png)
 
 This diagram focuses on:
 •	Key aspects and associations
@@ -33,11 +33,16 @@ This diagram focuses on:
 
 ## Interaction
 
-- How do components *communicate*? *When*? *What*?
+The interaction section explains the way componentsof the project work together in order to excecute the sentiment anlaysis workflow. The program follows a data driven model that initiate from the user actions for sequence of task processing, starting from reading raw data into structured and insightful data. The interaction senarios inldude:
+•	Upload and load customers online review through the system interface;
+•	Validating unstructured dataset before the further analysis;
+•	Pre-processing the unstructured textual data to mitigate errors and noises;
+•	Procedding data analysis in order to extract the related and most frequenct aspects;
+•	Assigning setiments realret to each review based on the extracted aspects;
+•	Visualizing results using charts for the user and decision makers.
+In order to demonsitrate the ineraction style, the sequence diagram is presented, as follow. At the beginning, unstructured data is submitted and in each step the data refine to be clear and usefull fo get resuls. The whole prcess is end by visualizing the final results related to the project. The interaction shows how the componets of the project in order to finish the seiminet anlsyis task of the project, which modular deisnging of the project make it easy to extend and improve the program.
+![sequence diagram ](./imgs/2.png)
 
-- Which **interaction patterns** do they enact?
-
-> UML sequence diagrams are welcome here
 
 ## Behaviour
 
