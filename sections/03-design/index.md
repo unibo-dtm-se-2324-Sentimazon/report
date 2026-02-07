@@ -46,12 +46,20 @@ In order to demonsitrate the ineraction style, the sequence diagram is presented
 
 ## Behaviour
 
-- How does **each** component *behave* individually (e.g., in *response* to *events* or messages)?
-    + Some components may be *stateful*, others *stateless*
+The behavoir of the project, sentimazon, is visualized using state driven anallitcal workflow. The whole process have a common entry point as dataset submitsion which start of the NLP pipeline and data transition throught stages.
+Key ststem states include:
+•	Idle
+•	Validation of data (data format)
+•	Textual data pre-proessing
+•	Applying Part of Speech tags for each chunk of the reviews
+•	Extract aspects
+•	Aspect based sentiment analsysis
+•	Aggregation of sentiments
+•	Visualization of the results
+•	dealing with issues throught the steps
+The state diagram related to the project, sentiamazon, is presented, as follow. 
+![state diagram ](./imgs/3.png)
 
-- Which components are in charge of updating the **state** of the system? *When*? *How*?
-
-> UML state diagrams or activity diagrams are welcome here
 
 ### Domain driven design (DDD) modelling
 
