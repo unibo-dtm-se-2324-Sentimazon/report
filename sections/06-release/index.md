@@ -6,26 +6,16 @@ nav_order: 7
 
 # Release
 
-- Which and how many artefacts are produced from your project's codebase?
-- Onto which repositories (e.g. PyPI, Docker Hub, GitHub Packages, NPM etc.) are they released? Why?
-- How are they released (e.g. manually, automatically, etc.)?
-   + report the configuration steps and commands to run to release the artefacts
+The project report release is automatically deployed using Github. Once the release is generated, it is published on GitHub repository. Specifically, the release on GitHub contains both artefact code and tests packages.
 
-## Choice of the license
+## Release Strategy
 
-- Which license did you choose for your artefacts? Why?
-- Which license did you choose for your code? Why?
+The project is used Semantic Versioning that is considered as de-facto standorn in open source, similicity for users, and its efficient implication within Github. Therefore, versions of the project is relased under three main formats, which is elaborated as follow.
+-  MAJOR: significant or major changes in the project that influence on the code integrity and data format.
+-  MINOR: implementation of features and improvments that contribute the project important but now so significant to break the Sentimazon existing flows.
+-  PATCH: minor fixes and small changes that have minor influnceo on the whole code.
 
-## Choice of the versioning schema
 
-- Which versioning schema (e.g. date-based versioning, SemVer, etc.) did you choose for your artefacts? Why?
-   + how does the versioning schema work?
+## Licensing
 
-- In case of multiple artefacts, are the version numbers aligned or each artefact has its own versioning pace? Why?
-
-- Describe when and how to create a new version of the artefacts in your project
-   + e.g. when to increment the major, minor, and patch version numbers
-   + e.g. how to create a new release branch
-   + e.g. how to create a new tag
-   + e.g. how to create a new release on GitHub
-
+The Sentimazon project is released under the MIT Licence. This easy-to-use license has few restrictions and is well-suited to various areas of software development. Hence, this license has been used in the Sentimazon project.
