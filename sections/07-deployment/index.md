@@ -48,3 +48,6 @@ Steps reqgarding to start and providng the results are listed as following steps
 * Precision
 * Recall
 * F1-score
+
+## Server-Side Installation
+The project is mostly excecuted on local environment using the user’s system. In this regard, overall the project does not rely on soureces outside of the user system envioemnt such as web servers, brokers, and databases. two sentiment analysis models named DistilBERT and RoBERTa as part of the transformer package automatically downloaded from the HuggingFce model repository since the first run the project.
