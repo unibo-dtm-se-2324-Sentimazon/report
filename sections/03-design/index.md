@@ -10,9 +10,57 @@ This section is presented the strategies applied to demonstrated requirements id
 
 ## Architecture 
 
-The project, as a pipline-oriented analystics application, is implemented in python programing langage. The sentiamzon process the unstructured data by procceding steps in order to extract knowledge from the data. The arctecture of the Sentimazon consit of multipme components. The first step, data acuaistion, is responsible to read the stored data in CSV file including reviews from external resourceses such as Kaggle. The pre-processing step is perfromed in the next step in order to proucede the normalization of the textual data and remove noises from the further analysis. Following the preprocessing, the aspect based sentiment analysis is applied to extract the sentiment related to each aspect of sentiment. The sentiments are classified into three categories inclusing positive, negative, and neutral. At the final step, the visualization components is generated the graphical charts in otder to present the sentiments distributions and aspect frequency. The architecture is perfocmed and structured using python programming language, which is presenteded as follow.
+The project is implemented as a pipeline-oriented data analytics application using Python. Sentimazon processes unstructured review data through several steps in order to extract useful information from customer opinions.
 
-![Activity diagram](./imgs/Architecture.png)
+The architecture of Sentimazon consists of multiple components. The first step is data acquisition, which is responsible for reading the stored review data from a CSV file. The original idea was to collect reviews directly from Amazon, but due to policy and technical limitations related to web scraping, a publicly available mobile review dataset from Kaggle was used instead.
+
+The second step is preprocessing. This step prepares the textual data for analysis by cleaning the reviews, normalizing the text, removing noise, removing stop words, applying tokenization, and applying lemmatization. This makes the review data more consistent and suitable for further Natural Language Processing tasks.
+
+Following preprocessing, aspect extraction and sentiment analysis are applied. Product-related aspects are extracted from the review text, and sentiment analysis is used to classify reviews into positive, negative, and neutral categories. The project includes VADER and transformer-based sentiment models such as DistilBERT and RoBERTa.
+
+At the final step, the evaluation and visualization components generate result tables and graphical charts. The evaluation component calculates performance metrics such as accuracy, precision, recall, and F1-score, while the visualization component presents aspect frequency and model performance.
+
+The general architecture of the project is shown in the activity diagram below.
+
+![Activity diagram](./imgs/4.png)
+In the revised version of the project, the architecture was also improved from a Software Engineering perspective. The first version was mainly implemented inside a single Jupyter Notebook. In the revised version, the notebook remains as the execution interface, while the main logic is separated into reusable Python modules under `src/sentimazon`.
+
+The main architectural components are:
+
+| Component | Responsibility |
+|---|---|
+| Data loading | Loads the review dataset and selects the required columns |
+| Preprocessing | Cleans review text, removes stop words, tokenizes text, and applies lemmatization |
+| Aspect extraction | Extracts noun-based product aspects from the processed text |
+| Sentiment analysis | Applies VADER, DistilBERT, and RoBERTa to classify sentiment |
+| Evaluation | Computes accuracy, precision, recall, and F1-score |
+| Visualization | Generates charts for aspect frequency and model performance |
+| Notebook interface | Executes the workflow and displays intermediate and final outputs |
+
+The revised module structure is:
+
+```text
+src/sentimazon/
+├── data_loader.py
+├── preprocessing.py
+├── aspect_extraction.py
+├── sentiment_analysis.py
+├── evaluation.py
+└── visualization.py
+```
+
+The general workflow is:
+
+```text
+Review dataset
+→ Data loading
+→ Text preprocessing
+→ POS tagging
+→ Aspect extraction
+→ Sentiment analysis
+→ Evaluation
+→ Visualization
+```
 
 ## Modelling
 The modelling section is designed based on the some core domain entities of Sentimazon including:
@@ -59,52 +107,4 @@ Key ststem states include:
 •	dealing with issues throught the steps
 The state diagram related to the project, sentiamazon, is presented, as follow. 
 ![state diagram ](./imgs/3.png)
-
-
-### Domain driven design (DDD) modelling
-
-- Which are the bounded contexts of your domain? 
-- Which are domain concepts (entities, value objects, aggregates, etc.) for each context?
-- Are there repositories, services, or factories for each/any domain concept?
-- What are the relavant domain events in each context?
-
-> Context map diagrams are welcome here
-
-### Object-oriented modelling
-
-- What are the main data types (e.g. classes) of the system?
-- What are the main attributes and methods of each data type?
-- How do data types relate to each other?
-
-> UML class diagrams are welcome here
-
-### In case of a distributed system
-
-- How do the domain concepts map to the architectural or infrastuctural components?
-    + i.e. which architectural/component is responsible for which domain concept?
-    + are there data types which are required onto multiple components? (e.g. messages being exchanged between components)
-
-- What are the domain concepts or data types which represent the state of the distributed system?
-    + e.g. state of a video game on central server, while inputs/representations on clients
-    + e.g. where to store messages in an instant-messaging app? for how long?
-
-- Are there domain concepts or data types which represent messages being exchanged between components?
-    + e.g. messages between clients and servers, messages between servers, messages between clients
-
-
-
-## Data-related aspects (in case persistent storage is needed)
-
-- Is there any data that needs to be stored?
-    - *What* data? *Where*? *Why*?
-
-- How should **persistent data** be **stored**? Why?
-    - e.g., relations, documents, key-value, graph, etc.
-
-- Which components perform queries on the database?
-    - *When*? *Which* queries? *Why*?
-    - Concurrent read? Concurrent write? Why?
-
-- Is there any data that needs to be shared between components?
-    - *Why*? *What* data?
 
