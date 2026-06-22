@@ -4,36 +4,52 @@ has_children: false
 nav_order: 2
 ---
 
-# Concept
+## Concept
 
-Snetimazon is an AI based decsion making framework for data processing and sentiment anlaysis if users textural data in Amazon phone reviews. The project data extracted from the onloine available amazon commnets published on Kaggle. The unstructured data, reviews, including emojies, hashtags, account names and etc is pre-processed to prepare for the nalysis. The object of the project  is to analyse the structured reviews in order to proceed the sentiment analysis and provide the inshights intor the business and customers regarding to the reviews and opniions about the product.
+Sentimazon is a Python-based sentiment analysis project for processing and analyzing product review data. The project focuses on mobile product reviews and uses a publicly available review dataset instead of real-time Amazon scraping, due to policy and technical limitations related to web scraping.
 
-- Type of product
-    -  Snetimazon does not have graphical user interface (GUI) instead it consist of some basic programming system that can be interacted with the user via scripts and instructions provided by the project. The project as a data processing toolkit including: 
-         1.  An python based workflow that can excectue sentiment analysis process from the    pre-processing throught the results 
-         2. An jupythne notebook environment to analysis, excecute, and visualize the sentiment analysis results.
+The main idea of the project is to transform unstructured review text into a cleaner and more structured form that can be used for Natural Language Processing and sentiment analysis. The input reviews may contain punctuation, usernames, hashtags, noisy words, and other elements that are not useful for analysis. Therefore, the text is first cleaned and preprocessed before applying sentiment analysis and visualization.
 
+The goal of Sentimazon is to support the analysis of customer opinions about product features. By processing product reviews, the project can help identify frequent product-related aspects, such as battery, price, quality, and performance, and evaluate whether reviews express positive, negative, or neutral sentiment.
 
-- Key features
+### Type of Product
 
-    1. Dataset processing:
-        Load the unstructured amazon reviews from the Kaggle website. This section is presented the visualization of the textural data before pre-processing 
-    2. Textural data pro-rpocessing:
-        A list of actions such as applying stop words, lowercasing, tokenization, and leminazation is applied to transform the unstructured data to structured data. This section is done in order to reduce noises to improve the further analysis accuracy
-    3. Aspect based sentiment analysis
-        The Aspect based sentiment analysis have done by classifying the textual data into positive, negative, and neutral reviews.
-    4. Visualization:
-        The result have visualized in order to display the sentiment distributions regarding to the each extracted aspects and provide a summary of the analysis
-- User interactions and Applications
-    - Users and roles: The Sentimazon is designed to be use for single user. This means adimistrative or gust roles are not required in order to implement the project. The program can be excecuted by all users from either academia or industry. 
-    - applications: The project can be modified to apply on various textual datasets. This interactions can be based on occasional or reporting and academic coursework. The important part of the project comply the policies related to privacy and regulations of business and companies to avoid any misuse of the project.
+Sentimazon is not a graphical user interface application. It is a data processing and sentiment analysis toolkit implemented in Python. The project can be used through a Jupyter Notebook and reusable Python modules.
 
-- Technical Implementation
-    - Used language: Python
-    - Libraries: NLTK, regex, Pandas, and Matplotlip
-    - Sentiment analysis: NLTK-Vader
-    - excecution envionrnment: Jupyter notebook and Python Command-line interface
-    - Data source: Amazon publicly available reviews
+The project consists of:
+
+1. A Python-based workflow for executing the sentiment analysis process from data loading to final results.
+2. A Jupyter Notebook interface for running the workflow, inspecting intermediate results, and visualizing the analysis.
+3. A modular Python package under `src/sentimazon`, where the main logic is separated into reusable components.
+
+### Key Features
+
+The main features of the project are:
+
+- **Dataset processing:** Loading the review dataset and selecting the required columns for analysis.
+- **Text preprocessing:** Cleaning the review text by removing unnecessary elements, converting text to lowercase, removing stop words, tokenizing words, and applying lemmatization.
+- **Aspect extraction:** Extracting noun-based product aspects from the processed reviews to identify frequently mentioned product features.
+- **Sentiment analysis:** Applying VADER and transformer-based sentiment models such as DistilBERT and RoBERTa to classify review sentiment.
+- **Model evaluation:** Comparing sentiment analysis results using accuracy, precision, recall, and F1-score.
+- **Visualization:** Presenting frequent aspects and model performance using basic charts.
+
+### User Interactions and Applications
+
+Sentimazon is designed as a single-user analytical tool. It does not require different user roles such as administrator, guest, or registered user. The user interacts with the project by running the notebook and Python modules.
+
+The project can be used for educational purposes, academic coursework, and exploratory analysis of customer review datasets. It can also be adapted to other types of textual datasets, as long as the data is collected and used according to the relevant privacy, platform, and data usage policies.
+
+### Technical Implementation
+
+The project is implemented using Python. The main technologies used are:
+
+- **Programming language:** Python
+- **Core libraries:** Pandas, NumPy, Regex, and NLTK
+- **Sentiment analysis tools:** VADER, DistilBERT, and RoBERTa
+- **Evaluation:** scikit-learn
+- **Visualization:** Matplotlib
+- **Execution environment:** Jupyter Notebook and Python modules
+- **Data source:** Publicly available mobile review sentiment dataset
 
 
 
