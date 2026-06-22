@@ -3,131 +3,100 @@ title: Requirements
 has_children: false
 nav_order: 3
 ---
-
 # Requirements
-- The user stories, functional, non-functional, and implementation requirements are defined and developed for the Sentimazon project. The project aims to analyses the reviews from Amazon databases using aspect bae sentiment analysis in order to discover meaningful insights. The collection, pre-process, analyze, and visualization of the results will assist business owners to have clear picture of customer’s expectation regarding to product(s).
 
-## User stories
-**Persona 1**: Data Analyst
-Experts who have technical skills who do the data analysis on the customers online reviews.
--	As a data analyst, it requires to have access to dataset of online customer reviews, so I can do analysis on the reviews
--	As a data analyst, I want to apply the pre-processing steps in order to mitigate noises and errors, so I can have efficient model and accurate result.
--	As a data analyst, I want to do sentiment analysis on the cleaned textural data, so I can determine the positive, negative, and neutral aspects per review.
--	As a data analyst, I want to illustrate the final results and sentiment distributions, so I can present the output of project to technical and non-technical groups.
+This section defines the main requirements of the Sentimazon project, including user stories, functional requirements, non-functional requirements, implementation requirements, acceptance criteria, and definition of done.
 
-**Persona 2**: Business Decision Maker
-Although both technical and non-technical stakeholders have interests to understand the customers reviews, the non-technical stakeholders are more interested on understanding customers expectations and views rather than coding part.
--	As a non-technical stakeholder, I want to have a vivid picture on aspects and sentiment related to each aspect of product, so I can understand the overall customer perception and satisfaction regarding to the product.
--	As a non-technical stakeholder, I want to see trends in reviews, so in that case I can determine the strengths and weakness of my product.
+Sentimazon is a Python-based sentiment analysis project for analyzing mobile product reviews. The project loads review data, preprocesses text, extracts product-related aspects, applies sentiment analysis models, evaluates the results, and visualizes the output.
 
+The original idea was to analyze Amazon reviews directly. However, due to scraping restrictions and reproducibility issues, the project was adapted to use a public mobile review sentiment dataset. This kept the main objective of customer review analysis while making the project easier to run and validate.
 
-## Requirements analysis
-\
-The list of requrinemnts are explained the what the project should proceed. In this regard, functional, non-functional, and implemantion constrains as requirnments are separated and grouped. In addition, requrienmts have specific acceptance criteria as validation of the requrinment.
-\
-**2.1.Functional requrinments**
+## User Stories
 
-***2.1.1.Overview the textual data***
-\
-Requrinemnts:
-The program must be able to capture and raed the reviews related to the products (ideally Amazon website)
-\
-Acceptance criteria:
--   the program is able to present various part of data including rating, row number, account name, and reviews
--   the textural data are saved on a accated file format (CSV) for next analysis.
-\
+### Persona 1: Data Analyst
 
-***2.1.2.Pre-Processing***
-\
-Requrinemnts:
-The program must be able to do pre-processing steps in order to mitigate further errors and noises in sentiment analysis
-\
-Acceptance criteria:
--   the program remove unnecceary charcters for the further analysis 
--   textual data is cleaned up and normalized
--   the each pre-processing step is stored in separate review column
-\
-***2.1.3.Sentiment Analysis***
-\
-Requrinemnts:
-The program must be able to analyse the reviews and determine reviews sentiments respect to each aspect.
-\
-Acceptance criteria:
--   the sentiment anlayiss grouped each review intro thee category including positive, negative, and nutral sentiments
-\
-***2.1.4.Visualization***
-\
-Requrinemnts:
-The program must be able to visualize  reviews and sentiment distribution
-\
-Acceptance criteria:
--   the program make bar-charts to visualize the sentimens related to each aspects.
--   The program displays the frquencey of each aspects and sentiments related to each review.
-\
-**2.2.Non-Functional requrinments**
-\
-***2.2.1.Usablity***
-\
-Requrinemnts:
-The program should be easy to use by users with basic knowledge on data analysis.
-\
-Acceptance criteria:
--   Results and analysis presentation are labeled and understandable
--   Files and results are clearly orgonize
-\
-***2.2.2.Performance***
-\
-Requrinemnts:
-The program must be able to process the data effictivly with high accuracy.
-\
-Acceptance criteria:
--   the program do the sentiment analysis within acceptable time period.
--   The program visualization and loading do not case significant delays on the process.
-\
-***2.2.3.Reliablity***
-\
-Requrinemnts:
-The program must be able to provide the consistent outputs.
-\
-Acceptance criteria:
--   the program produce the same results and visulizations after re-running the program
--   Noises and errors are fixed during the analysis withoit leading to data corruption.
-\
-***2.2.4.Maintainablity***
-\
-Requrinemnts:
-The program should be possible to modify with advanced models.
-\
-Acceptance criteria:
--   the program is structured in a way to be easy to mody and improve.
--   The program is modular and each part can be imrpve sepertally.
+The data analyst is a technical user who wants to process and analyze customer review data.
 
-**2.3.Implemntation Requrinments**  
-\
-***2.3.1.Programing Language***
-\
-Requrinemnts:
-The system should be programed using Python.
-\
-Justification:
-Python csonsit of many useful librararies for various part of natural language processing, making it as most poupolar programming language for sentiment analysis.
-\
-Acceptance criteria:
--   The whole program is written using Python
-\
-***2.3.2.Data analysis and visualization***
-\
-Requrinemnts:
-The program should implement required visualization libraries to present results.
-\
-Justification:
-Impemnation of proper libraries leads to improve relaibality and efficiency of the analysis.
-\
-Acceptance criteria:
--   Loading and data manupilation is handle using the Pandas library
--   Visualization of the analysis is produced via python visualization related libraries.
-\
-3.	Glossary
--   Sentiment analysis: Sentiment analysis, also known as opinion mining, is a subfield of natural language processing (NLP) that identifies and extracts subjective information from textual data. The main goal of sentiment analysis is to determine the emotional tone behind a set of words, which helps in understanding the attitudes, opinions, and feelings expressed in the text.
--   Pre-processing: The process of converting raw data into a format that is readable and understandable by machines. To perform any related activity, the texts are first cleaned and pre-processed.
--   Visualization: Data visualization is the process of translating information into a visual format, such as a map or graph, in order to make it easier for the human brain to understand the data and extract insights from it. The main goal of data visualization is to make it easier to identify patterns, trends, and outliers in large data sets.
+- As a data analyst, I want to load a review dataset, so that I can analyze customer opinions.
+- As a data analyst, I want to preprocess review text, so that the data is cleaner and more suitable for analysis.
+- As a data analyst, I want to extract product aspects, so that I can understand which features are frequently mentioned.
+- As a data analyst, I want to apply sentiment analysis models, so that I can classify reviews as positive, negative, or neutral.
+- As a data analyst, I want to compare model performance, so that I can evaluate the results.
+- As a data analyst, I want to visualize the output, so that I can present the results clearly.
+
+### Persona 2: Business Decision Maker
+
+The business decision maker is a non-technical stakeholder who wants to understand customer perception.
+
+- As a business decision maker, I want to see frequent product aspects, so that I can understand what customers discuss most.
+- As a business decision maker, I want to see sentiment results, so that I can understand customer satisfaction.
+- As a business decision maker, I want visual summaries, so that I can identify product strengths and weaknesses quickly.
+
+## Requirements Analysis
+
+The requirements are divided into three groups:
+
+- Functional requirements: what the system must do
+- Non-functional requirements: quality expectations of the system
+- Implementation requirements: technical constraints and development choices
+
+Each requirement includes a short acceptance criterion and a definition of done. This connects the requirements to the validation process.
+
+## Functional Requirements
+
+| ID | Requirement | Acceptance criterion | Definition of done |
+|---|---|---|---|
+| FR1 | The system must load the review dataset. | The dataset is loaded from the project `data` folder. | The dataset loads successfully using `data_loader.py`. |
+| FR2 | The system must select the required columns. | The workflow uses `review_text` and `sentiment`. | The selected DataFrame contains the required columns. |
+| FR3 | The system must preprocess review text. | Text is cleaned, normalized, tokenized, and lemmatized. | Preprocessing is implemented in `preprocessing.py` and runs in the notebook. |
+| FR4 | The system must extract product aspects. | Product-related terms such as battery, price, quality, and performance can be identified. | Aspect extraction is implemented in `aspect_extraction.py`. |
+| FR5 | The system must apply sentiment analysis. | VADER, DistilBERT, and RoBERTa can generate sentiment outputs. | Sentiment analysis is implemented in `sentiment_analysis.py`. |
+| FR6 | The system must evaluate model performance. | Accuracy, precision, recall, and F1-score are calculated. | Evaluation is implemented in `evaluation.py` and tested. |
+| FR7 | The system must visualize results. | Aspect frequency, sentiment results, and model performance can be displayed. | Visualization is implemented in `visualization.py`. |
+
+## Non-Functional Requirements
+
+| ID | Requirement | Acceptance criterion | Definition of done |
+|---|---|---|---|
+| NFR1 | Usability | The notebook and outputs are understandable. | The User Guide explains how to run the project. |
+| NFR2 | Reproducibility | The project can be run on another machine. | Dataset path is relative and dependencies are listed in `requirements.txt`. |
+| NFR3 | Reliability | The same dataset produces consistent outputs. | The notebook runs successfully with the provided dataset. |
+| NFR4 | Maintainability | The code is modular and easy to modify. | Source code is organized under `src/sentimazon`. |
+| NFR5 | Testability | Main lightweight modules can be tested automatically. | Tests are included in the `tests` folder and run with `pytest`. |
+
+## Implementation Requirements
+
+| ID | Requirement | Justification | Definition of done |
+|---|---|---|---|
+| IR1 | The project must be implemented in Python. | Python supports NLP, data analysis, and visualization libraries. | Code is implemented in the notebook and `src/sentimazon`. |
+| IR2 | The project must use appropriate analysis libraries. | Libraries improve reliability and development efficiency. | Required libraries are listed in `requirements.txt`. |
+| IR3 | The project must use Git and GitHub. | Version control improves traceability and project management. | The repository includes commits, branch workflow, pull request, and release. |
+| IR4 | The project must include automated testing and CI. | Testing and CI help detect errors after changes. | Tests pass locally and GitHub Actions runs successfully. |
+
+## Traceability Between Requirements and Validation
+
+| Requirement | Implementation evidence | Validation evidence |
+|---|---|---|
+| FR1, FR2 | `data_loader.py` | `test_data_loader.py` |
+| FR3 | `preprocessing.py` | `test_preprocessing.py` |
+| FR4 | `aspect_extraction.py` | `test_aspect_extraction.py` |
+| FR5 | `sentiment_analysis.py` | Notebook execution |
+| FR6 | `evaluation.py` | `test_evaluation.py` |
+| FR7 | `visualization.py` | Notebook output |
+| NFR2 | Relative paths and `requirements.txt` | Local execution |
+| NFR5 | `tests` folder | Local tests and GitHub Actions |
+| IR4 | `.github/workflows/ci.yml` | Successful CI run |
+
+## Glossary
+
+| Term | Definition |
+|---|---|
+| Sentiment analysis | A Natural Language Processing task used to identify whether text expresses positive, negative, or neutral opinion |
+| Preprocessing | Cleaning and transforming raw text into a format suitable for analysis |
+| Tokenization | Splitting text into smaller units such as words or tokens |
+| Lemmatization | Reducing words to their base form |
+| Aspect extraction | Identifying product-related features or topics from review text |
+| Visualization | Presenting data or results through charts and graphs |
+| CI | Continuous Integration, an automated process that validates changes in the repository |
+| Acceptance criterion | A condition used to check whether a requirement is satisfied |
+| Definition of done | A condition that shows when a requirement is complete |
