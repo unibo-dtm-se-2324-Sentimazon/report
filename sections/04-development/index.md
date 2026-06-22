@@ -11,17 +11,29 @@ Therefore, the publicly available amazon reviews from Kaggle website is used to 
 
 ## Development strategy
 
-The Sentimazon project is implemenined using Python ptograming language based on Jupyternotebook that enables excecution of each phase. Dependency management is handled and used in requtienmnet.txt file, highliting the requirnet libraries for ensure computational environment run efficiently.
-The core libraries used in the sentimazon project is listed, as follow.
--   Pandas: manipulating structured and unstructured data
--   NLTK: Conducting pre-processing and processing the data for sentiment analysis
--   Matplotlib: Visualizing the results from aspect detection and sentiment analysis
--   Regular Expressions: cleaning the usntructural textual data to mitigate errors and noises
+Sentimazon is implemented using Python and executed mainly through a Jupyter Notebook. The notebook is used as the execution interface, while the main logic is organized into reusable Python modules. This structure makes the workflow easier to understand, maintain, and test.
+
+Dependency management is handled through the `requirements.txt` file, which lists the libraries needed to run the project. The main libraries used in the project are:
+
+- **Pandas:** loading, manipulating, and storing structured review data
+- **NLTK:** preprocessing text and supporting sentiment analysis tasks
+- **Matplotlib:** visualizing aspect frequency and model performance
+- **Regular Expressions:** cleaning unstructured textual data and removing noise
+- **scikit-learn:** calculating evaluation metrics such as accuracy, precision, recall, and F1-score
+- **Transformers:** applying transformer-based sentiment models such as DistilBERT and RoBERTa
+The development process was improved after the project revision. The first version concentrated most of the implementation in the notebook. In the revised version, the code was separated into modules under `src/sentimazon`, while the notebook remained responsible for running the workflow and showing the results.
 
 ## Distributed Version Control System (DVCS)
 
-The sentimazon project is used Git as its Distributed Version Control System. This helps the project to follow the class project guidline and create a history on what have done on the project until its finish. In addision, implementation of Git, as one of the most popular environment for developers, provides oppourtunity to share the project with bigger coumunity in order to improve the project efficncey in future. Since the project is procedeeded by one person, the program history is progressed on one and main branch, which includes stable version of the program. The development tree is tracked sequence of commits starting from load of data until result visualization. The commits give a vivid picture on project for developer of the project and other developers to see the changes and be able to improve the project efficiently.
+The Sentimazon project uses Git as its Distributed Version Control System. Git was used to track the history of changes, manage the development process, and provide a clear record of how the project evolved.
 
+In the first version, most development was done directly on the main branch. After the project review, the workflow was improved by creating a separate branch called `project-revision`. The main refactoring work was completed on this branch and then merged into `main` through Pull Request #5 after CI validation.
+
+This improved workflow made the development process clearer and more traceable. It also shows the use of a more standard Software Engineering process:
+
+```text
+branch → commits → automated tests → CI validation → pull request → merge → release
+```
 ## Commit Conventions
 
 The project is used free-form messages in order to commit thoughat the changes without restricted structure. While the most of the project is followed the free-form commiting, the developer of the project relaizedd the cimmiting can be even more clearer if the convicetional commiting be use. Therefore, about midlle of the commits, the project is followed the following format for rest of the project. The project is followed the conventional commits specifications:
@@ -31,3 +43,15 @@ This form of cimmiting create a clear and traciable changes, providing a standar
 ## Implementation
 
 A list of sequential Natural language procrssing pipeline is created in order to initiate and process specific part of the the data manipulation for analysis. The project is inistate to excecute using the main notebook (Main.ipyb), which starting to lead the data and proceed the aspect based sentiment analysis. This initate prcosssing sequnces of phases that conduct part of compuations on the data based on the input dataset. Reading the stored data in a CSV file, including reviews from outside sources like Kaggle, is the responsibility of the first step, data acuaistion. To facilitate the normalization of the textual data and eliminate noise from subsequent analysis, the pre-processing step is carried out in the following step. After preprocessing, the sentiment associated with each aspect of sentiment is extracted using aspect-based sentiment analysis. Three categories—positive, negative, and neutral—are used to classify the sentiments. In order to display the sentiment distributions and aspect frequency, the visualization components are created as graphical charts in the last step.
+In the revised implementation, these steps are no longer concentrated only inside the notebook. They are distributed across separate modules:
+
+| Module | Responsibility |
+|---|---|
+| `data_loader.py` | Loads the dataset and selects required columns |
+| `preprocessing.py` | Cleans, tokenizes, and lemmatizes review text |
+| `aspect_extraction.py` | Applies POS tagging and extracts nouns/aspects |
+| `sentiment_analysis.py` | Runs VADER, DistilBERT, and RoBERTa sentiment models |
+| `evaluation.py` | Calculates model performance metrics |
+| `visualization.py` | Generates plots and charts |
+
+This implementation improves modularity because each file has a clear responsibility. It also improves testability because the main functions can be tested independently from the notebook.
